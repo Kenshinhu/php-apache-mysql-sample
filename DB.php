@@ -11,10 +11,11 @@ class DB
         $serverName = env("MYSQL_PORT_3306_TCP_ADDR", "db2.daocloudinternal.io");
         $databaseName = env("MYSQL_INSTANCE_NAME", "temp_db");
         $username = env("MYSQL_USERNAME", "root");
+        $port = env("MYSQL_PORT_3306_TCP_PORT","3306");
         $password = env("MYSQL_PASSWORD", "pZkPdT8uhPi");
 
         try {
-            $this->pdo = new PDO("mysql:host=$serverName;dbname=$databaseName", $username, $password);
+            $this->pdo = new PDO("mysql:host=$serverName;port=$port;dbname=$databaseName", $username, $password);
 
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

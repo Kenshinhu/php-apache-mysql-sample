@@ -9,7 +9,7 @@ test:
     - MYSQL_USERNAME = "root"
     - MYSQL_PASSWORD = "pZkPdT8uhPi"
     - MYSQL_INSTANCE_NAME = "temp_db"
-
+    - MYSQL_PORT_3306_TCP_PORT = "60205"
   install:
     - docker-php-ext-install pdo_mysql
 
